@@ -11,7 +11,7 @@ export default function BookLayout() {
       <Link to="/books/new">New Book</Link>
 
       {/* renders current Route */}
-      <Outlet />
+      <Outlet context={{ hello: 'World' }} />
     </div>
   );
 }

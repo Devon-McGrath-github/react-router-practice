@@ -16,6 +16,20 @@ import BookLayout from './Layouts/BookLayout';
 export const Router = () => {
   return (
     <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<About />} />
+
+        <Route path="/books" element={<BookLayout />}>
+          <Route index element={<BookList />} />
+          <Route path=":id" element={<Book />} />
+          <Route path="new" element={<NewBook />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
       <nav>
         <ul>
           <li>
@@ -32,19 +46,6 @@ export const Router = () => {
           </li>
         </ul>
       </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/about" element={<About />} />
-
-        <Route path="/books" element={<BookLayout />}>
-          <Route index element={<BookList />} />
-          <Route path=":id" element={<Book />} />
-          <Route path="new" element={<NewBook />} />
-        </Route>
-
-        <Route path="*" element={<NotFound />} />
-      </Routes>
     </>
   );
 };
