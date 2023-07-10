@@ -1,7 +1,11 @@
 import React from 'react';
 
 function NewBook() {
-  return <div>NewBook</div>;
+  return (
+    <div>
+      <h1>NEW BOOK component</h1>
+    </div>
+  );
 }
 
 export default NewBook;
